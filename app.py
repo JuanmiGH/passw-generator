@@ -12,17 +12,27 @@ def home():
     passw = ''
     err=False
     nchars=1
+    strengh=''
+    merr=''
 
     if request.method =='POST':
         nchars = request.form['range']
         opts = request.form.getlist('opts')
         if len(opts)>0:
-            err = False
-            passw = generator(nchars, opts)
+            if int(nchars) >= len(opts):
+                err = False
+                data = generator(nchars, opts)
+                passw=data[0]
+                strengh=data[1]
+                if len(data)==3:
+                    merr=data[2]
+                nchars=1
+            else:
+                err=True    
         else:
             err=True
 
-    return render_template('home.html', passw = passw, err = err, nchars = nchars)
+    return render_template('home.html', passw = passw, err = err, nchars = nchars, strengh=strengh, merr=merr)
 
 
 

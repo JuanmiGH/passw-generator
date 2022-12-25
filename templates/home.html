@@ -26,11 +26,14 @@
             </ul>
             <div class="row strength">
                 <span class="label">Fuerza:</span>
-                <span class="lvl vweak"></span>
-                <span class="lvl weak"></span>
-                <span class="lvl medium"></span>
-                <span class="lvl strong"></span>
+                <span class="lvl vweak {{'on' if strengh !='' and strengh > 2 }}"></span>
+                <span class="lvl weak {{'on' if strengh !='' and strengh > 5 }}"></span>
+                <span class="lvl medium {{'on' if strengh !='' and strengh > 8 }}"></span>
+                <span class="lvl strong {{'on' if strengh !='' and strengh > 9 }}"></span>
             </div>
+            {% if merr %}
+            <span class="p-bt-10 warning">{{merr}}</span>
+            {% endif %}
             <button>Generar Password</button>
         </form>
     </div>

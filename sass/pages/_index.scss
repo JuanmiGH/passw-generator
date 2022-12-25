@@ -151,12 +151,6 @@ form{
         &:checked{
             accent-color: $green;
         }
-
-        + label{
-            &.warning{
-                color: orangered;
-            }
-        }
     }
     
 }

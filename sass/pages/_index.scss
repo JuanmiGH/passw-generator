@@ -9,6 +9,18 @@ body{
     padding: 1rem 0;
 }
 
+@media (min-width: 1024px) and (max-width: 1194px) {
+    .container{
+        width: 40%;
+    }
+}
+
+@media (min-width: 1195px) {
+    .container{
+        width: 30%;
+    }
+}
+
 .row{
     display: flex;
     flex-wrap: wrap;
@@ -138,6 +150,12 @@ form{
     .check{
         &:checked{
             accent-color: $green;
+        }
+
+        + label{
+            &.warning{
+                color: orangered;
+            }
         }
     }
     

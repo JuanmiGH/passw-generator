@@ -4,19 +4,25 @@
         <h1>Password Generator</h1>
     </div>
     <div class="row sep valgn-center p-bt-10">
-        <span id="passw">P4$$w0rD</span>
+        <span id="passw">
+            {% if passw != '' %}
+                {{passw}}
+            {% else %}
+                P4$$w0rD
+            {% endif %}
+        </span>
     </div>
     <div class="row sep p-bt-20">
-        <form action="" method="post">
+        <form action="/" method="post">
             <div class="row p-0">
-                <input type="range" name="range" id="range" min="1" max="13" autocomplete="off" value="1">
+                <input type="range" name="range" id="range" min="1" max="13" autocomplete="off" value="{{nchars}}">
                 <label for="range">Nº de caracteres: 1</label>
             </div>
             <ul>
-                <li><input type="checkbox" class="check" name="min" id="min"><label for="min">Minúsculas</label></li>
-                <li><input type="checkbox" class="check" name="may" id="may"><label for="may">Mayúsculas</label></li>
-                <li><input type="checkbox" class="check" name="num" id="num"><label for="num">Números</label></li>
-                <li><input type="checkbox" class="check" name="sim" id="sim"><label for="sim">Símbolos</label></li>
+                <li><input type="checkbox" class="check" name="opts" id="min" value="min"><label for="min" {% if err %}class="warning"{% endif %}>Minúsculas</label></li>
+                <li><input type="checkbox" class="check" name="opts" id="may" value="may"><label for="may" {% if err %}class="warning"{% endif %}>Mayúsculas</label></li>
+                <li><input type="checkbox" class="check" name="opts" id="num" value="num"><label for="num" {% if err %}class="warning"{% endif %}>Números</label></li>
+                <li><input type="checkbox" class="check" name="opts" id="sim" value="sim"><label for="sim" {% if err %}class="warning"{% endif %}>Símbolos</label></li>
             </ul>
             <div class="row strength">
                 <span class="label">Fuerza:</span>

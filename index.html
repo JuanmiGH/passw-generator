@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/styles.min.css" type="text/css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <h1>Password Generator</h1>
+        </div>
+        <div class="row sep valgn-center p-bt-10">
+            <span id="passw">P4$$w0rD</span>
+        </div>
+        <div class="row sep p-bt-20">
+            <form action="" method="post">
+                <div class="row p-0">
+                    <input type="range" name="range" id="range" min="1" max="13" autocomplete="off" value="1">
+                    <label for="range">Nº de caracteres: 1</label>
+                </div>
+                <ul>
+                    <li><input type="checkbox" class="check" name="min" id="min"><label for="min">Minúsculas</label></li>
+                    <li><input type="checkbox" class="check" name="may" id="may"><label for="may">Mayúsculas</label></li>
+                    <li><input type="checkbox" class="check" name="num" id="num"><label for="num">Números</label></li>
+                    <li><input type="checkbox" class="check" name="sim" id="sim"><label for="sim">Símbolos</label></li>
+                </ul>
+                <div class="row strength">
+                    <span class="label">Fuerza:</span>
+                    <span class="lvl vweak on"></span>
+                    <span class="lvl weak on"></span>
+                    <span class="lvl medium on"></span>
+                    <span class="lvl strong on"></span>
+                </div>
+                <button>Generar Password</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="js/scripts.js"></script>
+
+</body>
+</html>

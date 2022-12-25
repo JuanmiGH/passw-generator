@@ -1,0 +1,24 @@
+/* CONFIG BASE */
+
+/* COLOURS */
+$black: #0c0b10;
+$black-secondary: #24232b;
+$white: #f0eff7;
+$grey: #54535b;
+$green: #a4ffaf;
+
+/* PATHS */
+$imageP: '/assets/imgs/';
+//$fontP: '/assets/fonts/';
+
+/* FONTS */
+$font-main: 'Montserrat', sans-serif; //WGHT: NORMAL 300 | BOLD 900 - STYLE: italic
+//$font-secondary: 'XXX', Tahoma; //WGHT: BOLD 700
+
+/* MAIN FONT */
+$rem-baseline: 16px !default; //TO PX2REM CONVERSOR
+// body{
+//     font-family: $font-main;
+//     font-weight: 400;
+//     font-size: 16px;
+// }

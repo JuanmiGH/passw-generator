@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a, a:hover, a:active, a:focus, button, button:hover, button:active, button:focus{
+    outline: none !important;
+}
+
+a, a:hover, a:active, a:focus, a:visited{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+body{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-family: $font-main;
+    height: 100vh;
+}

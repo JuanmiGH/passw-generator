@@ -47,21 +47,23 @@ h1{
     color: $grey;
     width: 100%;
     position: relative;
-    padding-right: 15px;
-    cursor: pointer;
+    cursor:default;
 
-    &::after{
-        content: '';
-        display: block;
-        position: absolute;
-        right: 0;
-        top: 25%;
-        width: 25px;
-        height: 25px;
-        background-color: $green;
-        -webkit-mask-image: url('/static/images/copy.svg');
-        mask-image: url('/static/images/copy.svg');
-        mask-size: contain;
+    &.copy{
+        cursor: pointer;
+        &::after{
+            content: '';
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 25%;
+            width: 25px;
+            height: 25px;
+            background-color: $green;
+            -webkit-mask-image: url('/static/images/copy.svg');
+            mask-image: url('/static/images/copy.svg');
+            mask-size: contain;
+        }
     }
 }
 
@@ -186,5 +188,12 @@ form{
         &.strong.on{
             background-color: green;
         }
+    }
+}
+
+a{
+    color: $green;
+    &:hover{
+        text-decoration: underline;
     }
 }

@@ -3,7 +3,7 @@ import os
 from modules.pssw_generator import generator
 
 app = Flask(__name__, instance_path='/')
-app.config['SECRET_KEY'] = '20315e1899eca26a36b5eb1a73bdcd1217cf6ec6'
+app.config['SECRET_KEY'] = 'TuSúperClaveSecreta'
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 @app.route('/', methods=["GET", "POST"])
@@ -12,8 +12,8 @@ def home():
     passw = ''
     err=False
     nchars=1
-    strengh=''
     merr=''
+    copy=False
 
     if request.method =='POST':
         nchars = request.form['range']
@@ -23,16 +23,18 @@ def home():
                 err = False
                 data = generator(nchars, opts)
                 passw=data[0]
-                strengh=data[1]
-                if len(data)==3:
-                    merr=data[2]
+                copy = True
+                if len(data)==2:
+                    copy = False
+                    merr=data[1]
                 nchars=1
             else:
-                err=True    
+                err=True
+                merr='Se necesitan más caracteres o menos condiciones.'  
         else:
             err=True
 
-    return render_template('home.html', passw = passw, err = err, nchars = nchars, strengh=strengh, merr=merr)
+    return render_template('home.html', passw = passw, err = err, nchars = nchars, merr=merr, copy=copy)
 
 
 

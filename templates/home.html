@@ -4,7 +4,7 @@
         <h1>Password Generator</h1>
     </div>
     <div class="row sep valgn-center p-bt-10">
-        <span id="passw">
+        <span id="passw" {% if copy %}class="copy"{% endif %}>
             {% if passw != '' %}
                 {{passw}}
             {% else %}
@@ -16,7 +16,7 @@
         <form action="/" method="post">
             <div class="row p-0">
                 <input type="range" name="range" id="range" min="1" max="13" autocomplete="off" value="{{nchars}}">
-                <label for="range">Nº de caracteres: 1</label>
+                <label for="range" id="lblrange">Nº de caracteres: 1</label>
             </div>
             <ul>
                 <li><input type="checkbox" class="check" name="opts" id="min" value="min"><label for="min" {% if err %}class="warning"{% endif %}>Minúsculas</label></li>
@@ -26,16 +26,19 @@
             </ul>
             <div class="row strength">
                 <span class="label">Fuerza:</span>
-                <span class="lvl vweak {{'on' if strengh !='' and strengh > 2 }}"></span>
-                <span class="lvl weak {{'on' if strengh !='' and strengh > 5 }}"></span>
-                <span class="lvl medium {{'on' if strengh !='' and strengh > 8 }}"></span>
-                <span class="lvl strong {{'on' if strengh !='' and strengh > 9 }}"></span>
+                <span class="lvl vweak"></span>
+                <span class="lvl weak"></span>
+                <span class="lvl medium"></span>
+                <span class="lvl strong"></span>
             </div>
             {% if merr %}
             <span class="p-bt-10 warning">{{merr}}</span>
             {% endif %}
             <button>Generar Password</button>
         </form>
+    </div>
+    <div class="row p-0 mt-16">
+       <span>Hecho con amor, Python y JavaScript por: <a href="https://github.com/JuanmiGH/">JMGHStudios</a></span>
     </div>
 </div>
 {% endblock %}

@@ -70,8 +70,13 @@ const strenghValue = () =>{
 }
 
 if($copyPass!=null){
-    $copyPass.addEventListener("click", (e) =>{
-        navigator.clipboard.writeText($copyPass.textContent.trim());
-        alert("Contraseña copiada al portapapeles" )
+    $copyPass.addEventListener("click", async () =>{
+        try{
+            await navigator.clipboard.writeText($copyPass.textContent.trim());
+            alert("Contraseña copiada al portapapeles")
+        } catch(err){
+            alert("Error: ", err )
+        }
+        
     })
 }
